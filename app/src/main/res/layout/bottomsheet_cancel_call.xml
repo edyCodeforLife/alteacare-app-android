@@ -1,0 +1,90 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"
+        android:paddingBottom="@dimen/_12sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view1"
+            android:layout_width="56dp"
+            android:layout_height="6dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="@color/grayLight2"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cancelCallBtnClose"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_close_black"
+            app:layout_constraintBottom_toTopOf="@+id/txtTitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtTitle1"
+            style="@style/TextInter600"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/str_cancel_bt_title"
+            android:textColor="@color/grayDark1"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view1" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayLight3"
+            app:layout_constraintBottom_toTopOf="@+id/cancelCallBottomSheetRecyclerview"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cancelCallBottomSheetRecyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle1"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_single_simple_cancel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelCallBottomSheetBtn"
+            style="@style/MainButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="32dp"
+            android:enabled="false"
+            android:text="@string/str_reason_btn_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancelCallBottomSheetRecyclerview" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

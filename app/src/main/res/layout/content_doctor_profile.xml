@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/docProfileImgDoctor"
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_52sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@mipmap/ic_altea_launcher" />
+
+    <ImageView
+        android:id="@+id/docProfileImgRsIcon"
+        android:layout_width="@dimen/_21sdp"
+        android:layout_height="@dimen/_21sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/docProfileTxtDoctorName"
+        app:layout_constraintStart_toEndOf="@id/docProfileImgDoctor"
+        app:layout_constraintTop_toTopOf="@+id/docProfileImgDoctor"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="ContentDescription"
+        tools:src="@mipmap/ic_altea_launcher" />
+
+    <TextView
+        android:id="@+id/docProfileTxtRsName"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="@id/docProfileImgRsIcon"
+        app:layout_constraintStart_toEndOf="@id/docProfileImgRsIcon"
+        app:layout_constraintTop_toTopOf="@id/docProfileImgRsIcon"
+        tools:text="Rs. Mitra keluarga" />
+
+    <TextView
+        android:id="@+id/docProfileTxtDoctorName"
+        style="@style/TextInter600"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:lines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toTopOf="@+id/docProfileTxtDoctorTitle"
+        app:layout_constraintEnd_toStartOf="@id/docProfileArrow"
+        app:layout_constraintStart_toStartOf="@id/docProfileImgRsIcon"
+        app:layout_constraintTop_toBottomOf="@+id/docProfileImgRsIcon"
+        tools:text="dr. Cindy Simangunsong" />
+
+    <TextView
+        android:id="@+id/docProfileTxtDoctorTitle"
+        style="@style/TextInter500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/docProfileImgDoctor"
+        app:layout_constraintStart_toStartOf="@id/docProfileImgRsIcon"
+        app:layout_constraintTop_toBottomOf="@+id/docProfileTxtDoctorName"
+        tools:text="Sp. Anak - Endokrinologi" />
+
+    <ImageView
+        android:id="@+id/docProfileArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

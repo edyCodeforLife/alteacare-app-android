@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackgroundBorderless"
+    android:paddingStart="@dimen/_12sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/itemNotifImgIcon"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_sort" />
+
+    <TextView
+        android:id="@+id/itemNotifTxtTitle"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/darker"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemNotifTxtContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/itemNotifImgIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Penyakit dalam" />
+
+    <TextView
+        android:id="@+id/itemNotifTxtContent"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:minLines="4"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemNotifTxtDate"
+        app:layout_constraintEnd_toEndOf="@id/itemNotifTxtTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/itemNotifTxtTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemNotifTxtTitle"
+        tools:text="No. konsultasi 66870080.  akan segera dimulai, pastikan handphone dan internet kamu aktif, klik di sini untuk memulai konsultasi. " />
+
+    <TextView
+        android:id="@+id/itemNotifTxtDate"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemNotifTxtContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/itemNotifTxtTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemNotifTxtContent"
+        tools:text="Hari ini 09:00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

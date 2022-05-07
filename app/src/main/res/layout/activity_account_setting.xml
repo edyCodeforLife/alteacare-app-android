@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textChangePassword"
+                style="@style/TextInter600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="#EBEBF0"
+                android:gravity="left|center"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingLeft="18dp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/str_change_password"
+                android:textColor="@color/blueDark"
+                app:layout_constraintBottom_toTopOf="@+id/textPasswordChange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textPasswordChange"
+                style="@style/TextInter400"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                android:gravity="left|center"
+                android:paddingLeft="21dp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/grayDark3"
+                app:layout_constraintEnd_toStartOf="@+id/accountBtnChangePassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textChangePassword"
+                android:text="@string/password" />
+
+            <TextView
+                android:id="@+id/accountBtnChangePassword"
+                style="@style/TextInter600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="right"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="18dp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/str_change"
+                android:textAllCaps="true"
+                android:textColor="@color/primary"
+                app:layout_constraintBottom_toBottomOf="@+id/textPasswordChange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textPasswordChange"
+                app:layout_constraintTop_toTopOf="@+id/textPasswordChange" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</RelativeLayout>

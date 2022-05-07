@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_list_profil_family"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_13sdp"
+        />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/str_description_profil_family"
+        android:layout_marginBottom="@dimen/_17sdp"
+        />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/str_description_second_profil_family"
+        android:textColor="@color/darker"
+        android:layout_marginBottom="@dimen/_37sdp"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/decissionFamilyBtnAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/DefaultButtonWhite"
+        android:text="@string/str_as_account"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/decissionFamilyBtnProfilInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/DefaultButtonWhite"
+        android:text="@string/str_no_provide_profile_family"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+
+
+</LinearLayout>

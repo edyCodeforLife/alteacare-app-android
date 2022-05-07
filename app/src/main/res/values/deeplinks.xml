@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="deep_link_label">Alteacare</string>
+    <string name="deep_link_schema">alteacare</string>
+    <string name="deep_link_host_appointment">appointment</string>
+    <string name="deep_link_host_teleconsultation">teleconsultation</string>
+    <string name="deep_link_home_widgets">home</string>
+    <string name="deep_link_registration">registration</string>
+    <string name="deep_link_account">account</string>
+    <string name="deep_link_covid_vaccine">covidvaccine</string>
+    <string name="deep_link_promotion">promotion</string>
+    <string name="deep_link_doctor">doctor</string>
+    <string name="deep_link_specialization">specialization</string>
+
+</resources>

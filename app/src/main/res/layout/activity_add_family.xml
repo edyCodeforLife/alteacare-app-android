@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addFamilyBtnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/family_contact" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtFamilyContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/OulineEditText"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/choose_family_contact"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black"
+                />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorFamilyContact"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_family_contact"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/addFamilyEdtxFirstName"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/fill_first_name"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorFirstName"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_empty_first_name"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/last_name" />
+
+            <EditText
+                android:id="@+id/addFamilyEdtxLastName"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/fill_last_name"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorLastName"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_empty_last_name"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/gender" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtGender"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/choose_gender"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorGender"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_empty_gender"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/birth_date" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtBirthDate"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/dd_mm_yyyy"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorBirthDate"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_empty_birth_date"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/birth_place"
+                />
+
+            <TextView
+                android:id="@+id/addFamilytxtBirthCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/OulineEditText"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/choose_birht_place"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black"
+                />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorBirthCountry"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/str_birth_country"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/addFamilyEdtxBirthPlace"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/str_place_birth"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorBirthPlace"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/str_error_birth_place"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/str_citizenship" />
+
+            <TextView
+                android:id="@+id/addFamilyEdtxCitizenship"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/fill_citizenship"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black"
+                />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorCitizenship"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_citizenship"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/str_ktp_number" />
+
+            <EditText
+                android:id="@+id/addFamilyEdtxKtpNumber"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/fill_ktp_number"
+                android:inputType="number"
+                android:maxLength="20"
+                android:digits="0123456789"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorKtpNumber"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_ktp_number"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/addFamilyTxtNoteKtpNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_note_ktp_form"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter_regular"
+                />
+
+            <TextView
+                style="@style/TextInter700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/address" />
+
+            <TextView
+                android:id="@+id/addFamilyTxtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/OulineEditText"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:hint="@string/choose_from_address"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black"
+                />
+
+            <TextView
+                android:id="@+id/addFamilyTxtErrorAddress"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_address"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addFamilyBtnNext"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:enabled="false"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

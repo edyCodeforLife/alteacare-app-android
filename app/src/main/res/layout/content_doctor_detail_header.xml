@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    app:layout_collapseMode="parallax">
+
+    <ImageView
+        android:id="@+id/doctorDetailImgDoctor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_specialist_inactive"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="contentDescription"
+        tools:layout_editor_absoluteY="70dp" />
+
+    <TextView
+        android:id="@+id/doctorDetailTxtName"
+        style="@style/TextInter700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@+id/doctorDetailTxtTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctorDetailImgDoctor"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Prof DR. dr. Cindy Simangunsong, FACG, Sp.PD, KGEH, FINASIM" />
+
+    <TextView
+        android:id="@+id/doctorDetailTxtTitle"
+        style="@style/TextInter700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@+id/doctorDetailImgHospitalIcon"
+        app:layout_constraintEnd_toEndOf="@id/doctorDetailTxtName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/doctorDetailTxtName"
+        app:layout_constraintTop_toBottomOf="@+id/doctorDetailTxtName"
+        tools:text="Spesialis Anak - Endokrinologi" />
+
+    <ImageView
+        android:id="@+id/doctorDetailImgHospitalIcon"
+        android:layout_width="@dimen/_21sdp"
+        android:layout_height="@dimen/_21sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintBottom_toTopOf="@+id/doctorDetailTxtLanguage"
+        app:layout_constraintStart_toStartOf="@id/doctorDetailTxtName"
+        app:layout_constraintTop_toBottomOf="@+id/doctorDetailTxtTitle"
+        tools:ignore="contentDescription"
+        tools:src="@drawable/ic_conversation" />
+
+    <TextView
+        android:id="@+id/doctorDetailTxtHospitalName"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="@id/doctorDetailImgHospitalIcon"
+        app:layout_constraintEnd_toEndOf="@id/doctorDetailTxtName"
+        app:layout_constraintStart_toEndOf="@id/doctorDetailImgHospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/doctorDetailImgHospitalIcon"
+        tools:text="RS. MIKA Kelapa Gading" />
+
+    <TextView
+        android:id="@+id/doctorDetailTxtLanguage"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:lines="1"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/doctorDetailTxtExperience"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/doctorDetailTxtName"
+        app:layout_constraintTop_toBottomOf="@+id/doctorDetailImgHospitalIcon"
+        tools:text="Bahasa, Inggris" />
+
+    <TextView
+        android:id="@+id/doctorDetailTxtExperience"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_round_20dp_soft_blue_solid"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/doctorDetailTxtLanguage"
+        app:layout_constraintEnd_toEndOf="@id/doctorDetailTxtName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/doctorDetailTxtLanguage"
+        app:layout_constraintTop_toTopOf="@id/doctorDetailTxtLanguage"
+        tools:text="15 Th Pengalaman" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

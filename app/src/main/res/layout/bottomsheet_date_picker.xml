@@ -1,0 +1,57 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="@dimen/_12sdp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view1"
+        android:layout_width="56dp"
+        android:layout_height="6dp"
+        app:cardBackgroundColor="@color/grayLight2"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitle1"
+        style="@style/TextInter700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/select_date"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view1" />
+
+    <DatePicker
+        android:id="@+id/datePickerBottomSheetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/datePickerBtnSelect"
+        style="@style/MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:enabled="false"
+        android:text="@string/choose"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/datePickerBottomSheetDate"
+        app:layout_constraintStart_toStartOf="@id/datePickerBottomSheetDate"
+        app:layout_constraintTop_toBottomOf="@id/datePickerBottomSheetDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

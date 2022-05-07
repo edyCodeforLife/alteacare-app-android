@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:foreground="?selectableItemBackgroundBorderless"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="6dp"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/itemListImg"
+            android:layout_width="@dimen/_47sdp"
+            android:layout_height="@dimen/_47sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_change_photo_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemListTextName"
+            style="@style/TextInter600"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/blueDark"
+            android:layout_toEndOf="@+id/itemListImg"
+            android:layout_alignTop="@+id/itemListImg"
+            tools:text="Engeline Hutagalung" />
+
+        <TextView
+            android:id="@+id/itemListContactFamily"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/grayDark3"
+            android:layout_below="@+id/itemListTextName"
+            android:layout_toEndOf="@+id/itemListImg"
+            android:layout_alignLeft="@+id/itemListTextName"
+            tools:text="Istri" />
+
+
+        <ImageView
+            android:id="@+id/itemListFamilyArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/ic_arrow_right_primary"
+            android:layout_alignTop="@+id/itemListTextName"
+            android:layout_alignParentEnd="true"
+            app:layout_constraintVertical_bias="0.41000003" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center" />
+
+    <include
+        android:id="@+id/stepper"
+        layout="@layout/line_steper_end_consultation" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/contentErrorRetry"
+            layout="@layout/content_error_retry"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/contentConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E5E5E5"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/textOrderId"
+                    style="@style/TextInter400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="#D6EDF6"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/order_id_view"
+                    android:textColor="@color/blueDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/paymentTextOrderIdNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="#D6EDF6"
+                    android:gravity="start|center"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textColor="@color/blueDark"
+                    app:layout_constraintBottom_toBottomOf="@+id/textOrderId"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textOrderId"
+                    app:layout_constraintTop_toBottomOf="@+id/textOrderId"
+                    app:layout_constraintTop_toTopOf="@+id/textOrderId"
+                    tools:text="66870080" />
+
+                <include
+                    android:id="@+id/viewDoctor"
+                    layout="@layout/content_consultation_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/paymentTextOrderIdNumber" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/paymentSuccessRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewDoctor"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_payment_fee" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/TextInter600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:text="@string/price_total"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/paymentSuccessRecycler" />
+
+                <TextView
+                    android:id="@+id/paymentTextPriceTotal"
+                    style="@style/TextInter600"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/textView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView2"
+                    tools:text="Rp. 215.000" />
+
+                <TextView
+                    style="@style/TextInter400"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="@string/payment_success"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/paymentBtnMyAppointment"
+                    style="@style/MainButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="@string/see_my_consultation"
+                    app:layout_constraintBottom_toTopOf="@id/paymentBtnHome"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/paymentBtnHome"
+                    style="@style/OutlineTextBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_32sdp"
+                    android:text="@string/go_to_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/lnrConsultation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <include
+                android:id="@+id/lnrLayoutConfimDoctor"
+                layout="@layout/item_confirmation_doctor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/TextInter400"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="@string/price_consultation"
+                android:textColor="@color/blueDark"
+                app:layout_constraintBottom_toBottomOf="@+id/txtConfirmationPrice"
+                app:layout_constraintEnd_toStartOf="@+id/confirmationTxtStrikePrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtConfirmationPrice" />
+
+            <TextView
+                android:id="@+id/confirmationTxtStrikePrice"
+                style="@style/TextInter400"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:paddingStart="0dp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/textView10"
+                app:layout_constraintEnd_toStartOf="@+id/txtConfirmationPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="@id/textView10"
+                tools:text="Rp. 15.000" />
+
+            <TextView
+                android:id="@+id/txtConfirmationPrice"
+                style="@style/TextInter700"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="18dp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/confirmationTxtStrikePrice"
+                app:layout_constraintTop_toBottomOf="@+id/lnrLayoutConfimDoctor"
+                tools:text="Rp.200.000" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#80FFFFFF"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtConfirmationPrice">
+
+                <TextView
+                    android:id="@+id/tv_pasien"
+                    style="@style/TextInter700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/record_patient"
+                    android:textColor="@color/grayDark3" />
+
+                <include
+                    android:id="@+id/confirmationPatient"
+                    layout="@layout/content_patient_data_consultation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lnrConsultation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_18sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView4">
+
+        <TextView
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/check_data_confirmation"
+            android:textColor="@color/grayDark3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmBtnAccept"
+            style="@style/MainButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/btn_next_confirmation" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/consulBtnChange"
+            style="@style/DefaultButtonWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/change_patient_confirmation"
+            android:textColor="@color/darker" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

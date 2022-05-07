@@ -1,0 +1,182 @@
+ext {
+
+    flavorVersionsCodeDev = rootProject.ext.dev_version_code
+
+    gradleVersion = '4.1.0'
+
+    kotlinVersion = '1.4.10'
+    kotlinCoroutineVersion = '1.4.1'
+
+    activityXExtLibraryVersion = '1.2.0-beta01'
+    navigationVersion = '2.3.1'
+    recyclerXLibVersion = '1.1.0'
+    cardXLibVersion = '1.0.0'
+    supportXLibraryVersion = '1.2.0'
+    appCompatVersion = '1.3.0-alpha02'
+    androidXCoreVersion = '1.3.1'
+    fragmentVersion = '1.3.0-alpha07'
+    constraintLayoutVersion = '1.1.3'
+    preferenceVersion = '1.1.1'
+    lifecycleVersion = '2.2.0'
+    multiDexVersion = '2.0.1'
+    roomVersion = '2.2.6'
+    biometricVersion = '1.0.1'
+    materialVersion = '1.3.0'
+    playServicesVersion = '12.0.1'
+    androidMapsUtilsVersion = '2.0.3'
+    hiltVersion = '1.0.0-alpha02'
+    fastAdapterVersion = '5.3.2'
+
+    okHttpVersion = '4.9.0'
+    retrofitVersion = '2.9.0'
+
+    glideVersion = '4.11.0'
+    daggerVersion = '2.28.3'
+    daggerHiltVersion = '2.28-alpha'
+    stethoVersion = '1.5.1'
+    progressButtonVersion = '1.0.3'
+    chuckOkHttpLoggingVersion = '1.1.0'
+    permissionVersion = "4.8.0"
+
+    // Testing libraries
+    jUnitVersion = '4.13'
+    jUnitRunnerVersion = '1.0.2'
+    espressoCoreVersion = '3.0.2'
+    mockitoVersion = '3.4.6'
+
+    moengageVersion = '11.4.02'
+    richNotificationVersion = '2.4.0'
+    facebookVersion = '12.0.1'
+
+    // Major -> Millions, Minor -> Thousands, Bug fix -> Hundreds, Build number -> tens. E.g 1.3.72#10 == 1,003,072,10
+
+    configVersion = [
+            applicationId: "com.dre.loyalty",
+            targetSdk  : 30,
+            minSdk     : 23
+    ]
+
+    devConfigVersion = [
+            versionCode: flavorVersionsCodeDev,
+            name       : "1.6.0"
+    ]
+
+    stagingConfigVersion = [
+            versionCode  : 28,
+            name         : "1.6.0"
+    ]
+
+    prodConfigVersion = [
+            versionCode  : 28,
+            name         : "1.6.0",
+    ]
+
+    kotlin = [
+            stdlib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            coroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion"
+    ]
+
+    androidX = [
+            activityExt        : "androidx.activity:activity-ktx:$activityXExtLibraryVersion",
+            navFragmentKtx     : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navUiKtx           : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+            navRuntimeKtx      : "androidx.navigation:navigation-runtime-ktx:$navigationVersion",
+            cardX              : "androidx.cardview:cardview:$cardXLibVersion",
+            recyclerX          : "androidx.recyclerview:recyclerview:$recyclerXLibVersion",
+            appCompatX         : "androidx.appcompat:appcompat:$appCompatVersion",
+            coreKtx            : "androidx.core:core-ktx:$androidXCoreVersion",
+            fragmentKtx        : "androidx.fragment:fragment-ktx:$fragmentVersion",
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            lifecycleCommon    : "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion",
+            lifecycleVmExt     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+            lifecycleLdExt     : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion",
+            multiDex           : "androidx.multidex:multidex:$multiDexVersion",
+            preferences        : "androidx.preference:preference-ktx:$preferenceVersion",
+            roomRuntime        : "androidx.room:room-runtime:$roomVersion",
+            roomCompiler       : "androidx.room:room-compiler:$roomVersion",
+            roomKtx            : "androidx.room:room-ktx:$roomVersion",
+            biometric          : "androidx.biometric:biometric:$biometricVersion",
+            hiltCommon         : "androidx.hilt:hilt-common:$hiltVersion",
+            hiltLifecycle      : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltVersion",
+            hiltCompiler       : "androidx.hilt:hilt-compiler:$hiltVersion",
+            material           : "com.google.android.material:material:$materialVersion",
+            swipeLayout        : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+            lifecycleProcess   : "androidx.lifecycle:lifecycle-process:$lifecycleVersion"
+    ]
+
+    googleLibraries = [
+            psGcm           : "com.google.android.gms:play-services-gcm:$playServicesVersion",
+            psMaps          : "com.google.android.gms:play-services-maps:$playServicesVersion",
+            psLocs          : "com.google.android.gms:play-services-location:$playServicesVersion",
+            psAuth          : "com.google.android.gms:play-services-auth:$playServicesVersion",
+            androidMapsUtils: "com.google.maps.android:android-maps-utils:$androidMapsUtilsVersion",
+            fcm             : "com.google.firebase:firebase-messaging:$playServicesVersion",
+            iid             : "com.google.firebase:firebase-iid"
+    ]
+
+    libraries = [
+            okhttpLogging           : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson            : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            rxJavaAdapter           : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            glide                   : "com.github.bumptech.glide:glide:$glideVersion",
+            glideOkhttp             : "com.github.bumptech.glide:okhttp-integration:$glideVersion",
+            glideCompiler           : "com.github.bumptech.glide:compiler:$glideVersion",
+            dagger                  : "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroid           : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerSupport           : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerProcessor         : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            daggerHilt              : "com.google.dagger:hilt-android:$daggerHiltVersion",
+            daggerHiltCompiler      : "com.google.dagger:hilt-android-compiler:$daggerHiltVersion",
+            stetho                  : "com.facebook.stetho:stetho:$stethoVersion",
+            stethoOkhttp            : "com.facebook.stetho:stetho-okhttp3:${stethoVersion}",
+            circleImageView         : 'de.hdodenhof:circleimageview:3.1.0',
+            fastAdapter             : "com.mikepenz:fastadapter:$fastAdapterVersion",
+            fastAdapterExpandable   : "com.mikepenz:fastadapter-extensions-expandable:$fastAdapterVersion",
+            fastAdapterViewBinding  : "com.mikepenz:fastadapter-extensions-binding:$fastAdapterVersion",
+            fastAdapterScroll       : "com.mikepenz:fastadapter-extensions-scroll:$fastAdapterVersion",
+            fastAdapterUtils        : "com.mikepenz:fastadapter-extensions-utils:$fastAdapterVersion",
+            rxJava                  : "io.reactivex.rxjava2:rxjava:2.2.10",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            rxBinding               : "com.jakewharton.rxbinding3:rxbinding:3.1.0",
+            ssp                     : 'com.intuit.ssp:ssp-android:1.0.6',
+            sdp                     : 'com.intuit.sdp:sdp-android:1.0.6',
+            otpView                 : 'io.github.chaosleung:pinview:1.4.4',
+            flexBox                 : 'com.google.android:flexbox:2.0.1',
+            circleImage             : 'de.hdodenhof:circleimageview:3.1.0',
+            pickIt                  : 'com.github.HBiSoft:PickiT:0.1.14',
+            permissionDispatcher    : "com.github.permissions-dispatcher:permissionsdispatcher:$permissionVersion",
+            permissionDispatcherKapt: "com.github.permissions-dispatcher:permissionsdispatcher-processor:$permissionVersion",
+            timber                  : 'com.jakewharton.timber:timber:4.7.1',
+            videoTwilio             : 'com.twilio:video-android:6.2.1',
+            sdkTwilio               : "com.twilio.sdk:twilio:8.8.0",
+            audioSwitch             : 'com.twilio:audioswitch:1.1.4',
+            chatTwillio             : 'com.twilio:chat-android:6.2.0',
+            uCrop                   : "com.github.yalantis:ucrop:2.2.6",
+            fasAdapterExpandable    : "com.mikepenz:fastadapter-extensions-expandable:5.3.2",
+            shimmer                 : "com.facebook.shimmer:shimmer:0.1.0@aar",
+            lottie                  : "com.airbnb.android:lottie:3.5.0",
+            midtrans                : "com.midtrans:uikit:1.28.1",
+            midtransSandbox         : "com.midtrans:uikit:1.28.1-SANDBOX",
+            fetchDownload           : "androidx.tonyodev.fetch2:xfetch2:3.1.6",
+            sqlite                  : "org.xerial:sqlite-jdbc:3.34.0",
+            sentry                  : "io.sentry:sentry-android:5.0.1",
+            moengage                : "com.moengage:moe-android-sdk:$moengageVersion",
+            richnotification        : "com.moengage:rich-notification:$richNotificationVersion",
+            facebook                : "com.facebook.android:facebook-android-sdk:$facebookVersion",
+            pdfView                 : "com.dmitryborodin:pdfview-android:1.1.0"
+    ]
+
+    testLibraries = [
+            junit         : "junit:junit:$jUnitVersion",
+            junitRunner   : "com.android.support.test:runner:$jUnitRunnerVersion",
+            espressoCore  : "com.android.support.test.espresso:espresso-core:$espressoCoreVersion",
+            mockito       : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoInline : "org.mockito:mockito-inline:$mockitoVersion",
+            coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutineVersion",
+            daggerHilt    : "com.google.dagger:hilt-android-testing:$daggerHiltVersion",
+    ]
+}

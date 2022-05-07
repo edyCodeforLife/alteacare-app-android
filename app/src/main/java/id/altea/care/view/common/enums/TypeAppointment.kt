@@ -1,0 +1,22 @@
+package id.altea.care.view.common.enums
+
+enum class TypeAppointment(val value: Int) {
+    NEW(0),
+    UNVERIFIED(1),
+    PROCESS_GP(2),
+    WAITING_FOR_PAYMENT(3),
+    PAID(10),
+    MEET_SPECIALIST(11),
+    ON_GOING(12),
+    WAITING_FOR_MEDICAL_RESUME(13),
+    WATCH_MEMO_ALTEA(14),
+    COMPLETED(20),
+    CANCELED_BY_SYSTEM(21),
+    CANCELED_BY_GP(22),
+    CANCELED_BY_USER(23),
+    PAYMENT_EXPIRED(24),
+    PAYMENT_FAILED(25),
+    REFUND(26),
+    REFUNDED(27),
+    NOTIFICATIONWILLENDEDIN10MINUTES(28)
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingTop="8dp"
+        android:paddingEnd="@dimen/_18sdp"
+        android:paddingBottom="@dimen/_12sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view1"
+            android:layout_width="56dp"
+            android:layout_height="6dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@color/grayLight2"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp" />
+
+        <TextView
+            android:id="@+id/btmSwitchAccountTxtTitle"
+            style="@style/TextInter700"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/switch_account"
+            android:textSize="@dimen/_12ssp"
+            tools:text="Pindahkan Akun" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/btmSwitchAccountRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btmSwitchAccountTxtTitle"
+            android:layout_marginTop="@dimen/_12sdp"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_account" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

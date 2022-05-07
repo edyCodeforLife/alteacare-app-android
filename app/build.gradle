@@ -1,0 +1,318 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+apply from: '../deps.gradle'
+android.defaultConfig.vectorDrawables.useSupportLibrary = true
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("gradle.properties")))
+
+android {
+    compileSdkVersion configVersion.targetSdk
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        resConfigs "en", "id"
+        vectorDrawables.useSupportLibrary = true
+
+        // Export local db schema into json file
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    splits {
+        abi {
+            // Enable ABI split
+            enable true
+            // Clear list of ABIs
+            reset()
+            // Specify each architecture currently supported by the Video SDK
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            // Specify that we do not want an additional universal SDK
+            universalApk true
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias localProperties['key_alias']
+            keyPassword localProperties['key_password']
+            storeFile file(localProperties['store_file'])
+            storePassword localProperties['store_password']
+        }
+        debug {
+            keyAlias localProperties['key_debug_alias']
+            keyPassword localProperties['key_debug_password']
+            storeFile file(localProperties['store_debug_file'])
+            storePassword localProperties['store_debug_password']
+        }
+    }
+
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles fileTree(dir: "proguard", include: ["*.pro"]).asList().toArray()
+            signingConfig signingConfigs.release
+            multiDexKeepProguard file('proguard/sentry-config.pro')
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    flavorDimensions "main"
+
+    productFlavors {
+        prod {
+            applicationId configVersion.applicationId
+            minSdkVersion configVersion.minSdk
+            targetSdkVersion configVersion.targetSdk
+            versionCode prodConfigVersion.versionCode
+            versionName prodConfigVersion.name
+            flavorDimensions "main"
+            resValue "string", "app_name", "AlteaCare"
+            applicationIdSuffix ""
+            multiDexEnabled true
+            
+            buildConfigField "String", "BASE_URL_API", localProperties['base_api_url']
+            buildConfigField "String", "BASE_SOCKET_URL", localProperties['base_socket_url']
+            buildConfigField "String", "MIDTRANS_BASE_URL", localProperties['midtrans_url']
+            buildConfigField "String", "MIDTRANS_CLIENT_KEY", localProperties['midtrans_client_key']
+            buildConfigField "String", "ONE_SIGNAL_CLIENT_ID", localProperties['one_signal_client_id_prod']
+            buildConfigField "String", "SENTRY_BASE_DSN", localProperties['sentry_base_dsn_prod']
+            buildConfigField "String", "MOENGAGE", localProperties['moengage_app_id']
+            buildConfigField "String", "ZENDEK_URL", localProperties['zendesk_url']
+            buildConfigField "String", "ZENDESK_APPLICATION_ID", localProperties['zendesk_application_id']
+            buildConfigField "String", "ZENDEK_OAUTH_CLIENT_ID", localProperties['zendesk_oauth_client_id']
+        }
+
+        stg {
+            applicationId configVersion.applicationId
+            minSdkVersion configVersion.minSdk
+            targetSdkVersion configVersion.targetSdk
+            versionCode stagingConfigVersion.versionCode
+            versionName stagingConfigVersion.name
+            flavorDimensions "main"
+            resValue "string", "app_name", "Stg - AlteaCare"
+            applicationIdSuffix ".stg"
+            multiDexEnabled true
+
+            buildConfigField "String", "BASE_URL_API", localProperties['base_staging_api_url']
+            buildConfigField "String", "BASE_SOCKET_URL", localProperties['base_staging_socket_url']
+            buildConfigField "String", "MIDTRANS_BASE_URL", localProperties['midtrans_url_sandbox']
+            buildConfigField "String", "MIDTRANS_CLIENT_KEY", localProperties['midtrans_client_key_sandbox']
+            buildConfigField "String", "ONE_SIGNAL_CLIENT_ID", localProperties['one_signal_client_id_dev']
+            buildConfigField "String", "SENTRY_BASE_DSN", localProperties['sentry_base_dsn_stg']
+            buildConfigField "String", "MOENGAGE", localProperties['moengage_app_id']
+            buildConfigField "String", "ZENDEK_URL", localProperties['zendesk_url']
+            buildConfigField "String", "ZENDESK_APPLICATION_ID", localProperties['zendesk_application_id']
+            buildConfigField "String", "ZENDEK_OAUTH_CLIENT_ID", localProperties['zendesk_oauth_client_id']
+
+
+        }
+
+        dev {
+            applicationId configVersion.applicationId
+            minSdkVersion configVersion.minSdk
+            targetSdkVersion configVersion.targetSdk
+            versionCode devConfigVersion.versionCode
+            versionName devConfigVersion.name
+            flavorDimensions "main"
+            resValue "string", "app_name", "Dev - AlteaCare"
+            applicationIdSuffix ".dev"
+            multiDexEnabled true
+
+            buildConfigField "String", "BASE_URL_API", localProperties['base_dev_api_url']
+            buildConfigField "String", "BASE_SOCKET_URL", localProperties['base_dev_socket_url']
+            buildConfigField "String", "MIDTRANS_BASE_URL", localProperties['midtrans_url_sandbox']
+            buildConfigField "String", "MIDTRANS_CLIENT_KEY", localProperties['midtrans_client_key_sandbox']
+            buildConfigField "String", "ONE_SIGNAL_CLIENT_ID", localProperties['one_signal_client_id_dev']
+            buildConfigField "String", "SENTRY_BASE_DSN", localProperties['sentry_base_dsn_dev']
+            buildConfigField "String", "MOENGAGE", localProperties['moengage_app_id']
+            buildConfigField "String", "ZENDEK_URL", localProperties['zendesk_url']
+            buildConfigField "String", "ZENDESK_APPLICATION_ID", localProperties['zendesk_application_id']
+            buildConfigField "String", "ZENDEK_OAUTH_CLIENT_ID", localProperties['zendesk_oauth_client_id']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation kotlin.stdlib
+    implementation androidX.appCompatX
+    implementation androidX.coreKtx
+
+    implementation androidX.recyclerX
+    implementation androidX.cardX
+    implementation androidX.activityExt
+    implementation androidX.fragmentKtx
+    implementation androidX.constraintLayout
+    implementation androidX.lifecycleCommon
+    implementation androidX.lifecycleExtensions
+    implementation androidX.material
+    implementation androidX.swipeLayout
+
+    // network
+    implementation libraries.okhttpLogging
+    implementation libraries.stetho
+    implementation libraries.stethoOkhttp
+    implementation libraries.retrofit
+    implementation libraries.retrofitGson
+    implementation libraries.rxJavaAdapter
+
+    // rxjava
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.rxBinding
+
+    // image
+    implementation libraries.glide
+    implementation libraries.glideOkhttp
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt libraries.glideCompiler
+
+    //sqlite
+    kapt libraries.sqlite
+
+    // DI
+    implementation libraries.dagger
+    implementation libraries.daggerSupport
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerProcessor
+
+    // ui
+    implementation libraries.sdp
+    implementation libraries.ssp
+    implementation libraries.fastAdapter
+    implementation libraries.fastAdapterViewBinding
+    implementation libraries.fastAdapterScroll
+    implementation libraries.fastAdapterUtils
+    implementation libraries.fasAdapterExpandable
+    implementation libraries.otpView
+    implementation libraries.flexBox
+    implementation libraries.circleImage
+    implementation libraries.shimmer
+
+
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // room
+    implementation androidX.roomRuntime
+    kapt androidX.roomCompiler
+
+    // log
+    implementation libraries.timber
+
+    // storage picker
+    implementation libraries.pickIt
+
+    //firebase
+    implementation googleLibraries.fcm
+    implementation googleLibraries.iid
+
+    // permission
+    implementation libraries.permissionDispatcher
+    kapt libraries.permissionDispatcherKapt
+
+    //Crop Image
+    implementation libraries.uCrop
+
+    //videoTwilio
+    implementation libraries.videoTwilio
+    implementation libraries.sdkTwilio
+    implementation libraries.audioSwitch
+
+    implementation libraries.pdfView
+
+
+    //chatTwillio
+    implementation libraries.chatTwillio
+
+    //fetchDownload
+    implementation libraries.fetchDownload
+
+    //sentry
+    implementation (libraries.sentry)
+
+    //chuker
+   // debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+
+    implementation('io.socket:socket.io-client:2.0.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+
+    devImplementation libraries.midtransSandbox
+    stgImplementation libraries.midtransSandbox
+    prodImplementation libraries.midtrans
+
+    implementation libraries.lottie
+
+    implementation 'com.github.oatrice:internet-speed-testing:1.0.1'
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+
+    // Unit Test
+    testImplementation testLibraries.junit
+    testImplementation testLibraries.mockito
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation testLibraries.junitRunner
+    androidTestImplementation testLibraries.espressoCore
+
+    implementation androidX.lifecycleProcess
+    implementation libraries.moengage
+    implementation libraries.richnotification
+    implementation libraries.facebook
+    implementation group: 'com.zendesk', name: 'support', version: '5.0.3'
+
+}

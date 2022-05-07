@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/_18sdp">
+
+    <TextView
+        style="@style/TextInter700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_call_ended"
+        android:textSize="@dimen/_13ssp" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/str_dialog_end_call"
+        android:textColor="@color/grayDark1"
+        android:textSize="@dimen/_11ssp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelCallTransitionBtnYes"
+        style="@style/OutlineButtonGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/str_btn_cancel_call"
+        android:textColor="@color/grayDark3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelCallTransitionBtnNo"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/str_no_cancel_call" />
+
+</LinearLayout>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_18sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_18sdp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        style="@style/TextInter400"
+        android:text="Apakah Data Diatas Sudah Benar ?"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Benar, Lanjutkan"
+        android:gravity="center"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/DefaultButtonWhite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Ubah Pasien"
+        android:textColor="@color/primary"
+        android:gravity="center"
+
+        />
+
+</LinearLayout>

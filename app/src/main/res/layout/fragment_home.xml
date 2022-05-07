@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/homePLoading"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading_lottie.json"
+        app:lottie_loop="true"
+        app:lottie_repeatMode="restart" />
+
+    <include
+        android:id="@+id/homeContentError"
+        layout="@layout/content_error_retry"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_backgroud"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:src="@drawable/ic_logo_alteacare_kemenkes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/homeImgNotification"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_notification"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/homeTxtNotifBadge"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_notification"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7ssp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/homeImgNotification"
+            app:layout_constraintTop_toTopOf="@+id/homeImgNotification"
+            tools:text="19"
+            tools:visibility="visible" />
+
+        <ScrollView
+            android:id="@+id/scroll_home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical">
+
+                <include
+                    android:id="@+id/homeProfileLayout"
+                    layout="@layout/content_home_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/homeWelcomeText"
+                    style="@style/TextInter400"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/welcome_alteacare"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/TextInter700"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/home_title1"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+                <TextView
+                    android:id="@+id/homeEdtxSearch"
+                    style="@style/SearchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:hint="@string/home_hint_search"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardHomeMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeEdtxSearch">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvHomeMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeEdtxSearch"
+                        tools:listitem="@layout/item_menu_home" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/TextInter700"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/direct_consultation_with_specialist"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardHomeMenu" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerSpecialist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView7"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_specialist"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/txtPromo"
+                    style="@style/TextInter700"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/str_promo_altea"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtShowMorePromo"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/homeRecyclerSpecialist" />
+
+                <TextView
+                    android:id="@+id/txtShowMorePromo"
+                    style="@style/TextInter400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:text="@string/see_all"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtPromo"
+                    app:layout_constraintEnd_toStartOf="@+id/imgShowMorePromo"
+                    app:layout_constraintTop_toTopOf="@+id/txtPromo" />
+
+                <ImageView
+                    android:id="@+id/imgShowMorePromo"
+                    style="@style/TextInter400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_arrow_right_primary"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtShowMorePromo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtShowMorePromo"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerPromo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPromo"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_banner"
+                    tools:orientation="horizontal" />
+
+                <me.relex.circleindicator.CircleIndicator2
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    app:ci_drawable="@drawable/ic_circle_selected"
+                    app:ci_drawable_unselected="@drawable/ic_circle_unselected"
+                    app:ci_margin="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/homeRecyclerPromo" />
+
+                <TextView
+                    android:id="@+id/txtNewAltea"
+                    style="@style/TextInter700"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:text="@string/str_new_from_altea"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/homeRecyclerPromo" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerBanner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNewAltea"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_banner"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/TextInter700"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_consultation_schedule"
+                    android:textColor="@color/blueDark"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeRecyclerBanner" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerSchedule"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView8"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_home_schedule"
+                    tools:orientation="horizontal" />
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/textView8"
+                    tools:visibility="gone">
+
+                    <Button
+                        android:id="@+id/homeBtnLogin"
+                        style="@style/DefaultButtonBlue"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/login"
+                        android:textSize="@dimen/_11ssp"
+                        tools:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        style="@style/TextInter400"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/login_to_show_consultation"
+                        android:textColor="@color/blueDark"
+                        tools:visibility="gone" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="homeProfileLayout,homeWelcomeText"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="10dp" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/homeGroupLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="homeProfileLayout,homeRecyclerSchedule"
+                    tools:visibility="gone" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/homeGroupBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="homeRecyclerBanner,txtNewAltea" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/homeGroupUnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="homeWelcomeText,linear"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/homeGroupPromo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="txtShowMorePromo,imgShowMorePromo,txtPromo,homeRecyclerPromo"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/parentLiveChat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/scroll_home">
+
+            <RelativeLayout
+                android:id="@+id/relLiveChat"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="24dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/txtLiveChat"
+                    style="@style/TextInter400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_round_20dp_green_solid"
+                    android:backgroundTint="@color/darker"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/fab_home_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLiveChat"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="-20dp"
+                    android:layout_toStartOf="@id/txtLiveChat"
+                    android:background="@drawable/zs_request_list_gray_circle"
+                    android:backgroundTint="@color/darker"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_call_video"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

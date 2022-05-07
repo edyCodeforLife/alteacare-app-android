@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_20sdp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TextInter700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:text="@string/title_teleconsultation_schedule"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toStartOf="@+id/imgClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="image close"
+        android:src="@drawable/ic_close_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/txtCountDownTimer"
+        style="@style/TextInter700"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:gravity="center"
+        android:textColor="@color/redLighter"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:text="01:30:59" />
+
+    <TextView
+        android:id="@+id/txtTitleDesc"
+        style="@style/TextInter600"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:gravity="center"
+        android:text="@string/title_description_countdown"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountDownTimer" />
+
+    <TextView
+        android:id="@+id/txtDesc"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:text="Saat ini telekonsultasi belum dapat dilakukan, \nkonsultasi akan dilakukan pada:"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleDesc" />
+
+    <TextView
+        android:id="@+id/patientDataTxtDate"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:drawablePadding="@dimen/_4sdp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:layout_marginEnd="@dimen/_14sdp"
+        app:drawableStartCompat="@drawable/ic_date_blue"
+        app:layout_constraintEnd_toStartOf="@+id/patientDataTxtTime"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/txtDesc"
+        app:layout_constraintTop_toBottomOf="@id/txtDesc"
+        tools:text="Selasa, 11 Des 2020" />
+
+    <TextView
+        android:id="@+id/patientDataTxtTime"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_4sdp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_clock_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/patientDataTxtDate"
+        app:layout_constraintEnd_toEndOf="@+id/txtDesc"
+        app:layout_constraintTop_toTopOf="@id/patientDataTxtDate"
+        tools:text="09.00 - 11.00" />
+</androidx.constraintlayout.widget.ConstraintLayout>

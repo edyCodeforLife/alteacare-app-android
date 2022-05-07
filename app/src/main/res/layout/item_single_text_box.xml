@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_22sdp"
+    android:paddingEnd="@dimen/_18sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/textContentMessageCallEnded"
+        style="@style/OulineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="top|start"
+        android:hint="@string/write_message_here"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:minHeight="@dimen/_60sdp"
+        android:minLines="3"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_6sdp"
+        android:visibility="visible"
+        tools:ignore="Autofill,LabelFor"
+        tools:visibility="visible" />
+
+</RelativeLayout>

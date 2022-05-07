@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/paymentImgDoctor"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_altea_launcher" />
+
+    <ImageView
+        android:id="@+id/paymentImgRs"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/paymentImgDoctor"
+        app:layout_constraintTop_toTopOf="@+id/paymentImgDoctor"
+        tools:src="@drawable/ic_altea_launcher" />
+
+    <TextView
+        android:id="@+id/paymentTxtHospital"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="7dp"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentTxtNameDoctor"
+        app:layout_constraintStart_toEndOf="@+id/paymentImgRs"
+        app:layout_constraintTop_toTopOf="@+id/paymentImgRs"
+        app:layout_constraintVertical_bias="0.92"
+        tools:text="RS. MIKA Kelapa Gading" />
+
+
+    <TextView
+        android:id="@+id/paymentTxtChange"
+        style="@style/TextInter600"
+        android:layout_width="@dimen/_38sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:gravity="center"
+        android:text="@string/ubah_constultation"
+        android:textColor="@color/primary"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentTxtHospital"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toEndOf="@+id/paymentTxtHospital"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <TextView
+        android:id="@+id/paymentTxtNameDoctor"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/grayDark1"
+        app:layout_constraintStart_toEndOf="@+id/paymentImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/paymentImgRs"
+        tools:text="dr. Cindy Simangunsong" />
+
+    <TextView
+        android:id="@+id/paymentTxtSpesialis"
+        style="@style/TextInter500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/grayDark1"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentImgDoctor"
+        app:layout_constraintStart_toEndOf="@+id/paymentImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTxtNameDoctor"
+        tools:text="Sp. Anak - Endokrinologi" />
+
+
+    <TextView
+        android:id="@+id/paymentTxtCalendar"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="14dp"
+        android:drawablePadding="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:drawableStartCompat="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/paymentTxtTime"
+        app:layout_constraintStart_toStartOf="@+id/paymentImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTxtSpesialis"
+        tools:text="Selasa, 28 Des 2020" />
+
+
+    <TextView
+        android:id="@+id/paymentTxtTime"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:drawableStartCompat="@drawable/ic_clock"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentTxtCalendar"
+        app:layout_constraintEnd_toEndOf="@+id/paymentTxtChange"
+        app:layout_constraintStart_toEndOf="@+id/paymentTxtCalendar"
+        app:layout_constraintTop_toTopOf="@+id/paymentTxtCalendar"
+        tools:text="09.45 - 10.00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/miMic"
+        android:title="@string/str_stop_mic"
+        android:icon="@drawable/ic_mic_on"
+        />
+
+    <item
+        android:id="@+id/miVideo"
+        android:title="@string/stop_video"
+        android:icon="@drawable/ic_video_camera_on"
+        />
+
+    <!-- todo temporary hide -->
+    <item
+        android:id="@+id/miScreen"
+        android:icon="@drawable/ic_share_screen"
+        android:title="@string/str_share_screen"
+         />
+
+    <item
+        android:id="@+id/miMessage"
+        android:title="@string/str_message"
+        android:icon="@drawable/ic_message"
+        />
+
+    <!-- todo temporary hide -->
+    <item
+        android:id="@+id/miAnother"
+        android:icon="@drawable/ic_icon_menu"
+        android:title="@string/str_other"
+        android:visible="false" />
+
+</menu>

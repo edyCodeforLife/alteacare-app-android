@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayLight3">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/ic_medical_resume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/itemEmptyResumeTxtMessage"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:textColor="@color/blueDark"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:text="@string/memo_in_proggress" />
+
+
+    <Button
+        android:id="@+id/itemEmptyBtnRefresh"
+        style="@style/MainButton"
+        android:layout_width="@dimen/_95sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="@string/str_refresh"
+        app:layout_constraintEnd_toEndOf="@+id/itemEmptyResumeTxtMessage"
+        app:layout_constraintStart_toStartOf="@+id/itemEmptyResumeTxtMessage"
+        app:layout_constraintTop_toBottomOf="@+id/itemEmptyResumeTxtMessage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

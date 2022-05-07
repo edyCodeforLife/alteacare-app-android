@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayLight3">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+        <TextView
+            android:id="@+id/paymentOverTxtOrderId"
+            style="@style/TextInter400"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Order id: 5009932" />
+
+        <include
+            android:id="@+id/contentDoctor"
+            layout="@layout/content_doctor_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="@id/paymentOverTxtOrderId"
+            app:layout_constraintStart_toStartOf="@id/paymentOverTxtOrderId"
+            app:layout_constraintTop_toBottomOf="@id/paymentOverTxtOrderId" />
+
+        <TextView
+            android:id="@+id/paymentOverTxtDate"
+            style="@style/TextInter600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_4sdp"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:textColor="@color/grayDark3"
+            android:textSize="@dimen/_10ssp"
+            app:drawableStartCompat="@drawable/ic_date_blue"
+            app:layout_constraintEnd_toStartOf="@+id/paymentOverTxtTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/contentDoctor"
+            app:layout_constraintTop_toBottomOf="@id/contentDoctor"
+            tools:text="Selasa, 11 Des 2020" />
+
+        <TextView
+            android:id="@+id/paymentOverTxtTime"
+            style="@style/TextInter600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_4sdp"
+            android:gravity="center_vertical"
+            android:textColor="@color/grayDark3"
+            android:textSize="@dimen/_10ssp"
+            app:drawableStartCompat="@drawable/ic_clock_blue"
+            app:layout_constraintBottom_toBottomOf="@+id/paymentOverTxtDate"
+            app:layout_constraintEnd_toEndOf="@id/paymentOverTxtOrderId"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/paymentOverTxtDate"
+            app:layout_constraintTop_toTopOf="@+id/paymentOverTxtDate"
+            tools:text="09.00 - 11.00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/paymentOverTxtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:gravity="center"
+        android:textColor="@color/redLight"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint"
+        tools:text="@string/over_payment_title" />
+
+    <TextView
+        android:id="@+id/paymentOverTxtNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="@string/over_payment_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayLight4"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <TextView
+                style="@style/TextInter600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/name" />
+
+            <EditText
+                android:id="@+id/callCenterEdtxName"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/callCenterPersonalTxtErrorName"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/str_name"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/callCenterEdtxEmail"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/email"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/callCenterContactTxtErrorEmail"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_invalid_email"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/phone_number" />
+
+            <LinearLayout
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_4sdp"
+                    android:text="@string/_62"
+                    android:textColor="@color/grayDark1"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/callCenterEdtxPhone"
+                    style="@style/MainEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="812345678"
+                    android:digits="0123456789"
+                    android:inputType="phone"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="Autofill,LabelFor" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/callCenterContactTxtErrorPhone"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_invalid_phone"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/message_category" />
+
+            <TextView
+                android:id="@+id/textTypeMessageCallCenter"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/choose_message_category"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down_black" />
+
+            <TextView
+                android:id="@+id/callCenterPersonalTxtErrorMessageCategory"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_message_category"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                style="@style/TextInter600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/message" />
+
+            <EditText
+                android:id="@+id/textContentMessageCallCenter"
+                style="@style/OulineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="top|start"
+                android:hint="@string/write_message_here"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:minHeight="@dimen/_80sdp"
+                android:minLines="3"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                tools:ignore="Autofill,LabelFor" />
+            <TextView
+                android:id="@+id/callCenterTxtErrorContent"
+                style="@style/MainErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/error_content_message"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSendMessageCallCenter"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:enabled="false"
+                android:text="@string/send_message" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCallCenter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textCentralInformation"
+            style="@style/TextInter700"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/information_center"
+            android:textColor="@color/blueDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textEmailCallCenter"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/str_alamat_email"
+            android:textColor="@color/darker"
+            app:layout_constraintStart_toStartOf="@+id/textCentralInformation"
+            app:layout_constraintTop_toBottomOf="@+id/textCentralInformation" />
+
+        <TextView
+            android:id="@+id/textDataEmailCallCenter"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/darker"
+            app:layout_constraintBottom_toBottomOf="@+id/textEmailCallCenter"
+            app:layout_constraintStart_toEndOf="@+id/textEmailCallCenter"
+            app:layout_constraintTop_toTopOf="@+id/textEmailCallCenter"
+            tools:text="cs@alteacare.com" />
+
+        <ImageView
+            android:id="@+id/imgCallCenter"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_call_center"
+            app:layout_constraintBottom_toBottomOf="@+id/textWaDataCallCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textWaCallCenter" />
+
+        <TextView
+            android:id="@+id/textWaCallCenter"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/str_call_via_wa"
+            android:textColor="@color/darker"
+            app:layout_constraintBottom_toBottomOf="@+id/callCenterBtnTelphon"
+            app:layout_constraintStart_toEndOf="@+id/imgCallCenter"
+            app:layout_constraintTop_toTopOf="@+id/callCenterBtnTelphon"
+            app:layout_constraintVertical_bias="0.24000001" />
+
+        <TextView
+            android:id="@+id/textWaDataCallCenter"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="+62 813 1573 9245"
+            android:textColor="@color/darker"
+            app:layout_constraintEnd_toEndOf="@+id/textWaCallCenter"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textWaCallCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textWaCallCenter" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/callCenterBtnTelphon"
+            style="@style/DefaultButtonWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:gravity="center"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/phone"
+            app:icon="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmailCallCenter"
+            app:layout_goneMarginTop="@dimen/_6sdp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

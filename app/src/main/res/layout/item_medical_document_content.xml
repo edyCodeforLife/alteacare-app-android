@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageIcon"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_marginBottom="@dimen/_19sdp"
+        android:src="@drawable/ic_document_graydark3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/itemMedicalDocTxtFileName"
+        style="@style/TextInter400"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/itemMedicalDocTxtFileSize"
+        app:layout_constraintStart_toEndOf="@id/imageIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="file name" />
+
+    <TextView
+        android:id="@+id/itemMedicalDocTxtFileSize"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayDark3"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemMedicalDocTxtFileDate"
+        app:layout_constraintStart_toStartOf="@id/itemMedicalDocTxtFileName"
+        app:layout_constraintTop_toBottomOf="@+id/itemMedicalDocTxtFileName"
+        tools:text="325Kb" />
+
+    <TextView
+        android:id="@+id/itemMedicalDocTxtFileDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/itemMedicalDocTxtFileName"
+        app:layout_constraintTop_toBottomOf="@+id/itemMedicalDocTxtFileSize"
+        tools:text="Hari ini 09:00" />
+
+    <TextView
+        android:id="@+id/itemMedicalDocTxtShow"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show"
+        android:foreground="?selectableItemBackground"
+        android:padding="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:textColor="@color/darker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/itemMedicalDocProgressBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayLight2"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

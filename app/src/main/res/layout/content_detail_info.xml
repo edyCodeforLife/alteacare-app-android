@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/_218sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_round_6dp_blue_solid"
+        android:padding="@dimen/_16sdp"
+        >
+        <TextView
+            android:id="@+id/ctnDetailInfoTextName"
+            style="@style/TextInter600"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dr. Cindy Simangunsong"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+        <TextView
+            android:id="@+id/ctnDetailInfoTextSpesialis"
+            style="@style/TextInter500"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="@color/white"
+            android:text="Sp. Anak - Endokrinologi"
+            />
+        <TextView
+            android:id="@+id/ctnDetailInfoTextSchedule"
+            style="@style/TextInter400"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="@color/white"
+            android:text="Selasa, 28 Des 2020"
+            />
+
+    </LinearLayout>
+

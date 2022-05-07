@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp"
+    android:foreground="?selectableItemBackgroundBorderless"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/itemAddressTextChange"
+            style="@style/TextInter600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:text="@string/change_uppercase"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/itemAddressTextAddress"
+            style="@style/TextInter400"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemAddressTextChange"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:textColor="@color/grayDark2"
+            tools:text="Komp Bukit dago, Blok B2\nkel. Gunung sindur Kec. Gunung Sindur\nKota Bogor Jawa barat 12345" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemAddressTextAddress"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:cardCornerRadius="4dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/itemAddressIsPrimaryAddress"
+                style="@style/TextInter500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/lighter"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/primary_address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/itemAddressImgMore"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_below="@id/itemAddressTextAddress"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_green_more"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

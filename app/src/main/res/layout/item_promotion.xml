@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:id="@+id/txtPromo"
+        style="@style/TextInter700"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/str_promo_altea"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtShowMorePromoGroup"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:text="@string/see_all"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@+id/imgShowMorePromo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgShowMorePromo"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_arrow_right_primary"
+        app:layout_constraintBottom_toBottomOf="@+id/txtShowMorePromoGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtShowMorePromoGroup" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_item_promotion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtPromo"
+        app:layout_constraintTop_toBottomOf="@+id/txtPromo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+package id.altea.care.core.data.response
+
+import androidx.annotation.Keep
+import com.google.gson.annotations.SerializedName
+import id.altea.care.core.domain.model.SubSpecialization
+
+@Keep
+data class AppointmentSpecialistChildResponse(
+    @SerializedName("id") val id: String?,
+    @SerializedName("name") val name: String?
+) {
+    companion object {
+        fun toSpecializationChild(appointmentSpecialistChil: AppointmentSpecialistChildResponse?): SubSpecialization =
+            SubSpecialization(
+                null,
+                null,
+                appointmentSpecialistChil?.name,
+                appointmentSpecialistChil?.id
+            )
+    }
+}

@@ -1,0 +1,13 @@
+package id.altea.care.core.domain.model
+
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class FilesMedicalResume(
+    val formats: String?,
+    val id: String?,
+    val name: String?,
+    val size: Double?,
+    val url: String?
+) : Parcelable

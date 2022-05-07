@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    android:foreground="?selectableItemBackgroundBorderless">
+
+    <ImageView
+        android:id="@+id/itemDoctorSpImgDoctor"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@mipmap/ic_altea_launcher" />
+
+    <TextView
+        android:id="@+id/itemDoctorSpTxtExperience"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_round_20dp_soft_blue_solid"
+        android:paddingStart="@dimen/_4sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemDoctorSpTxtDoctorName"
+        app:layout_constraintStart_toEndOf="@id/itemDoctorSpImgDoctor"
+        app:layout_constraintTop_toTopOf="@id/itemDoctorSpImgDoctor"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="15 Th Pengalaman" />
+
+    <TextView
+        android:id="@+id/itemDoctorSpTxtDoctorName"
+        style="@style/TextInter700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemDoctorSpTxtSpecialistName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/itemDoctorSpTxtExperience"
+        app:layout_constraintTop_toBottomOf="@+id/itemDoctorSpTxtExperience"
+        tools:text="dr. Cindy Simangunsong" />
+
+    <TextView
+        android:id="@+id/itemDoctorSpTxtSpecialistName"
+        style="@style/TextInter500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemDoctorSpImgDoctor"
+        app:layout_constraintStart_toStartOf="@+id/itemDoctorSpTxtDoctorName"
+        app:layout_constraintTop_toBottomOf="@+id/itemDoctorSpTxtDoctorName"
+        tools:text="Specialist Anak" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

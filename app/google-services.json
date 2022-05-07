@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "516588215802",
+    "project_id": "alteacare-65f21",
+    "storage_bucket": "alteacare-65f21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516588215802:android:729a115fdc472df6141843",
+        "android_client_info": {
+          "package_name": "com.dre.loyalty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516588215802-5mfjshg0u6olj2f6t9lnfjom556lhl8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dre.loyalty",
+            "certificate_hash": "4388a3db0033966c637b679e36ad5a69c4918718"
+          }
+        },
+        {
+          "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQdxlINshJiU7XVCWGD64N0ji4KqIqXXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516588215802:android:0c3c53cc91610b00141843",
+        "android_client_info": {
+          "package_name": "com.dre.loyalty.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516588215802-1apuubhpicjb671mal25er0v5a09988k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dre.loyalty.stg",
+            "certificate_hash": "f2a5951bff44f15d8ea44431258a00643bee2d5f"
+          }
+        },
+        {
+          "client_id": "516588215802-ute297b6c0v67cgs5nu3sdea95olu7kn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dre.loyalty.stg",
+            "certificate_hash": "4388a3db0033966c637b679e36ad5a69c4918718"
+          }
+        },
+        {
+          "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQdxlINshJiU7XVCWGD64N0ji4KqIqXXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516588215802:android:2cd21c92fcbccfe8141843",
+        "android_client_info": {
+          "package_name": "com.dre.loyalty.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQdxlINshJiU7XVCWGD64N0ji4KqIqXXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516588215802-ahfsj7h0pa0g6hfjnnfnj9dhq5hvg253.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

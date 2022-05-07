@@ -1,0 +1,73 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'deps.gradle'
+buildscript {
+    //    region dev code versioning
+    def versionPropsFile = file('version.properties')
+    def versionCodeField = 'VERSION_CODE'
+
+    ext.getVersionProps = { ->
+        def versionProps = new Properties()
+        if (versionPropsFile.exists() && versionPropsFile.canRead()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+        }
+        return versionProps
+    }
+
+    ext.getBuildVersionCode = { ->
+        return ((getVersionProps() as Properties)[versionCodeField] ?: "1").toInteger()
+    }
+
+    ext.setBuildVersionCode = { versionCode ->
+        def props = getVersionProps()
+        props[versionCodeField] = versionCode.toString()
+        props.store(versionPropsFile.newWriter(), null)
+    }
+
+    ext.dev_version_code = getBuildVersionCode()
+//    endregion
+
+    ext.kotlin_version = "1.4.10"
+
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.2"
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.10, 0.99.99]'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.google.com' }
+        maven { url "https://jitpack.io" }
+        maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task incrementVersionCode(type: Assemble) {
+    def buildVersionCode = getBuildVersionCode()
+    //limit maximum build version code to 1000
+    if (buildVersionCode > 1000) buildVersionCode = 1 else buildVersionCode += 1
+    setBuildVersionCode(buildVersionCode)
+    ext.dev_version_code = buildVersionCode
+}

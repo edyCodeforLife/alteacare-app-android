@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Andreas Oen on 12/30/20 8:43 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 12/30/20 8:43 PM
+  ~ github: https://github.com/oandrz
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/bg_nav_home"
+        android:title="@string/nav_home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_specialist"
+        android:icon="@drawable/bg_nav_specialist"
+        android:title="@string/nav_specialist"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_consultation"
+        android:icon="@drawable/bg_nav_consultation"
+        android:title="@string/nav_consultation"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/bg_nav_profile"
+        android:title="@string/nav_profile"
+        app:showAsAction="ifRoom" />
+
+</menu>

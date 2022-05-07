@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBF0">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_below="@+id/appbar"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/textPhotoProfile"
+        style="@style/TextInter600"
+        android:layout_width="@dimen/_173sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/str_photo_profile"
+        android:textColor="@color/blueDark"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintStart_toStartOf="parent"
+       />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_change_photo_profile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPhotoProfile" />
+
+    <TextView
+        android:id="@+id/viewTextProfile"
+        style="@style/TextInter600"
+        android:layout_width="@dimen/_173sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/str_telpon_number"
+        android:textColor="@color/blueDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+
+    <TextView
+        android:id="@+id/textNomorChangeProfile"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:layout_constraintEnd_toStartOf="@+id/btnPhoneChangeProfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewTextProfile"
+        tools:text="+62 81234567890" />
+
+    <TextView
+        android:id="@+id/btnPhoneChangeProfil"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="18dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/ubah_constultation"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/textNomorChangeProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textNomorChangeProfile"
+        app:layout_constraintTop_toTopOf="@+id/textNomorChangeProfile" />
+
+    <TextView
+        android:id="@+id/viewTextEmail"
+        style="@style/TextInter600"
+        android:layout_width="@dimen/_173sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/str_email"
+        android:textColor="@color/blueDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNomorChangeProfile" />
+
+
+    <TextView
+        android:id="@+id/textEmailChangeProfile"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:layout_constraintEnd_toStartOf="@+id/btnEmailChangeProfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewTextEmail"
+        tools:text="@string/str_email_desc" />
+
+    <TextView
+        android:id="@+id/btnEmailChangeProfil"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="18dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/ubah_constultation"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/textEmailChangeProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textEmailChangeProfile"
+        app:layout_constraintTop_toTopOf="@+id/textEmailChangeProfile" />
+
+
+        <TextView
+            android:id="@+id/viewTextAddress"
+            style="@style/TextInter600"
+            android:layout_width="@dimen/_173sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@string/str_address"
+            android:textColor="@color/blueDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmailChangeProfile" />
+
+
+        <TextView
+            android:id="@+id/textAddressChangeProfile"
+            style="@style/TextInter400"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="8dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:textColor="@color/grayDark3"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddressChangeProfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewTextAddress"
+            tools:text="Jalan terus jadian kaga, kelurahan kecamatan provinsi" />
+
+        <TextView
+            android:id="@+id/btnAddressChangeProfil"
+            style="@style/TextInter600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="18dp"
+            android:paddingStart="0dp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@string/ubah_constultation"
+            android:textAllCaps="true"
+            android:textColor="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@+id/textAddressChangeProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textAddressChangeProfile"
+            app:layout_constraintTop_toTopOf="@+id/textAddressChangeProfile" />
+
+    <TextView
+        android:id="@+id/viewTextPersonal"
+        style="@style/TextInter600"
+        android:layout_width="@dimen/_173sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/str_personal_data"
+        android:textColor="@color/blueDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAddressChangeProfile" />
+
+    <TextView
+        android:id="@+id/changePersonalText"
+        style="@style/TextInter600"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical|end"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="18dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/ubah_constultation"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewTextPersonal" />
+
+
+    <include
+        android:id="@+id/patientDataChangeProfile"
+        layout="@layout/content_patient_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changePersonalText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>

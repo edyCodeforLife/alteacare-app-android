@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/itemSampleRadioButton"
+        style="@style/TextInter400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:textColor="@color/selector_default_radio_button"
+        android:layoutDirection="rtl"
+        android:minHeight="@dimen/_40sdp"
+        android:textAlignment="textStart"
+        tools:text="Laki-laki" />
+
+</FrameLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/accountSwipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/accountLoading"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading_lottie.json"
+            app:lottie_loop="true"
+            app:lottie_repeatMode="restart" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/accountScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/subtle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/profileProfileLayout"
+                    layout="@layout/content_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/profileAccount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/profileAccount"
+                    style="@style/TextInter600"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/str_account"
+                    android:textColor="@color/blueDark"
+                    app:layout_constraintBottom_toTopOf="@+id/account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileProfileLayout" />
+
+                <include
+                    android:id="@+id/account"
+                    layout="@layout/content_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileAccount" />
+
+                <TextView
+                    android:id="@+id/profileAbout"
+                    style="@style/TextInter600"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/str_about"
+                    android:textColor="@color/blueDark"
+                    app:layout_constraintBottom_toTopOf="@+id/about"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/account" />
+
+                <include
+                    android:id="@+id/about"
+                    layout="@layout/content_about"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileAbout" />
+
+
+                <Button
+                    android:id="@+id/accountBtnExit"
+                    style="@style/AccountButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_22sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/str_exit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/redLight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/about" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

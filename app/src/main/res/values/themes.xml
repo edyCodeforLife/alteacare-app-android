@@ -1,0 +1,264 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Alteaandroid" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/darker</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/primary</item>
+        <item name="colorOnSecondary">@color/grayDark1</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:windowAnimationStyle">@style/AlteaAnim.Activity</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <!-- Customize your theme here. -->
+       <item name="floatingActionButtonStyle">@style/floating_rectangle</item>
+    </style>
+
+    <style name="floating_rectangle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/fab_3_rounded</item>
+        <item name="backgroundTint">#37383C</item>
+    </style>
+
+    <style name="fab_3_rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+       <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.BottomNavigationView.Inactive</item>
+    </style>
+
+    <!-- blank styles for better code readability-->
+    <style name="TextAppearance"/>
+    <style name="TextAppearance.BottomNavigationView"/>
+
+    <!-- inactive tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <!-- active tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+
+    <style name="AlteaAnim.Activity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="DefaultTextSansRegular">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/grayDark1</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="DefaultTextSansBold">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/grayDark1</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="DefaultTextInter">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/grayDark1</item>
+    </style>
+    <!--see https://stackoverflow.com/a/46701441-->
+    <style name="TextInter400" parent="DefaultTextInter">
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="TextInter500" parent="DefaultTextInter">
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="TextInter600" parent="DefaultTextInter">
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+    </style>
+
+    <style name="TextInter700" parent="DefaultTextInter">
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="MainButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/_38sdp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+        <item name="cornerRadius">6dp</item>
+    </style>
+
+    <style name="BtnPromotion" parent="MainButton">
+        <item name="android:minHeight">@dimen/_30sdp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+        <item name="cornerRadius">6dp</item>
+    </style>
+
+    <style name="DefaultButtonBlue" parent="MainButton">
+        <item name="android:backgroundTint">@color/darker</item>
+    </style>
+
+
+
+    <style name="OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="minHeight">@dimen/_38sdp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="OutlineWhiteButton" parent="OutlineButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="android:textColor">@color/redLight</item>
+    </style>
+
+    <style name="DefaultButtonWhite" parent="OutlineButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="strokeColor">@color/primary</item>
+    </style>
+
+
+    <style name="ButtonOutlineWhite" parent="OutlineButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="strokeColor">@color/white</item>
+    </style>
+
+
+
+    <style name="DefaultButtonWhiteNoStroke" parent="OutlineButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+
+    <style name="OutlineBlueButtonWhite" parent="OutlineButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="strokeColor">@color/darker</item>
+    </style>
+
+
+    <style name="OutlineButtonBlue" parent="DefaultButtonWhite">
+        <item name="strokeColor">@color/darker</item>
+    </style>
+
+    <style name="OutlineButtonGrey" parent="DefaultButtonWhite">
+        <item name="strokeColor">@color/grayDark3</item>
+    </style>
+
+    <style name="OutlineTextBlue" parent="DefaultButtonWhite">
+        <item name="android:textColor">@color/darker</item>
+    </style>
+
+
+    <style name="AccountButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/_46sdp</item>
+        <item name="android:background">@color/white</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextInter600</item>
+    </style>
+
+    <style name="OulineEditText" parent="MainEditText">
+        <item name="android:background">@drawable/selector_edittext_outline</item>
+    </style>
+
+    <style name="OutlinePrimaryEditText" parent="OulineEditText">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="MainEditText">
+        <item name="android:minHeight">@dimen/_35sdp</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/grayDark1</item>
+        <item name="android:textColorHint">@color/grayDark4</item>
+    </style>
+
+    <style name="SearchEditText" parent="MainEditText">
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+        <item name="android:paddingStart">@dimen/_12sdp</item>
+        <item name="android:paddingEnd">@dimen/_12sdp</item>
+        <item name="android:minHeight">@dimen/_30sdp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:lines">1</item>
+        <item name="android:drawableStart">@drawable/ic_search</item>
+        <item name="android:background">@drawable/selector_edittext_20dp_outline</item>
+    </style>
+
+    <style name="MainErrorText">
+        <item name="strokeWidth">1dp</item>
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textColor">@color/redDark</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:drawableStart">@drawable/ic_error_form_required</item>
+    </style>
+
+    <style name="BottomSheetDialogTopRounded" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_round_top_16dp_white</item>
+    </style>
+
+    <style name="TabTextApperance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="DatePicker" parent="@android:style/Theme.Holo.Light">
+        <item name="android:datePickerStyle">@android:style/Widget.DatePicker</item>
+    </style>
+
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

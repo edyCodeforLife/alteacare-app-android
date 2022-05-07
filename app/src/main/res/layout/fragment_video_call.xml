@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/crdLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.twilio.video.VideoView
+            android:id="@+id/videoCallPrimaryView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true" />
+
+
+        <id.altea.care.core.helper.util.ZoomVideoView
+            android:id="@+id/videoCallShareView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+
+        <include
+            android:id="@+id/videocallScreenOff"
+            layout="@layout/screen_video_off"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+
+        <include
+            android:id="@+id/videocallScreenOffSignal"
+            layout="@layout/screen_video_off"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/videoCallReconnecting"
+            layout="@layout/content_reconnecting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <com.twilio.video.VideoView
+                android:id="@+id/videoCallSecodView"
+                android:layout_width="135dp"
+                android:layout_height="153dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/videocallScreenOffLocal"
+                layout="@layout/screen_video_off_local"
+                android:layout_width="135dp"
+                android:layout_height="153dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.twilio.video.VideoView
+                android:id="@+id/videoCallThreeView"
+                android:layout_width="135dp"
+                android:layout_height="153dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallSecodView"
+                app:layout_constraintTop_toTopOf="@+id/videoCallSecodView" />
+
+            <include
+                android:id="@+id/videoCallMicPrimary"
+                layout="@layout/item_mic_primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallThreeView"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <include
+                android:id="@+id/videoCallMicSecond"
+                layout="@layout/item_mic_second"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/videoCallSecodView"
+                app:layout_constraintStart_toStartOf="@+id/videoCallSecodView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="#9C000000"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp">
+
+
+            <ImageButton
+                android:id="@+id/videoCallBtnInfo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_btn_info"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallBtnSpeaker"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/videoCallBtnSpeaker"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_volume_on"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallBtnFlipCamera"
+                app:layout_constraintStart_toEndOf="@+id/videoCallBtnInfo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/videoCallBtnFlipCamera"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_flip_camera"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallTvTimer"
+                app:layout_constraintStart_toEndOf="@+id/videoCallBtnSpeaker"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <Chronometer
+                android:id="@+id/videoCallTvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallEnd"
+                app:layout_constraintStart_toEndOf="@+id/videoCallBtnFlipCamera"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12:23:01" />
+
+            <Button
+                android:id="@+id/videoCallEnd"
+                style="@style/MainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="@string/str_end_call"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/videoCallTvTimer"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/videoCallTrackConnection"
+            layout="@layout/item_tracking_connection"
+            android:layout_marginTop="@dimen/_47sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+
+        <include
+            android:id="@+id/videoCallDisplayDisconnect"
+            layout="@layout/content_disconnect"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/crdLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/videoCallBtmNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            android:saveEnabled="true"
+            app:itemTextColor="@color/white"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/nav_vicall" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

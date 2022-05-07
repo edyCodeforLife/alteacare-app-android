@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/itemTextTypeGroup"
+        style="@style/TextInter700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtShowMorePromo"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Telekonsultasi " />
+
+    <TextView
+        android:id="@+id/txtShowMorePromo"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:text="@string/see_all"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTextTypeGroup"
+        app:layout_constraintEnd_toStartOf="@+id/imgShowMorePromo"
+        app:layout_constraintTop_toTopOf="@+id/itemTextTypeGroup" />
+
+    <ImageView
+        android:id="@+id/imgShowMorePromo"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_arrow_right_primary"
+        app:layout_constraintBottom_toBottomOf="@+id/txtShowMorePromo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtShowMorePromo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

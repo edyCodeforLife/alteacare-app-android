@@ -1,0 +1,185 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_18sdp"
+    android:paddingTop="8dp"
+    android:paddingEnd="@dimen/_18sdp"
+    android:paddingBottom="@dimen/_12sdp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view1"
+        android:layout_width="56dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center_horizontal"
+        app:cardBackgroundColor="@color/grayLight2"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp" />
+
+    <TextView
+        android:id="@+id/txtTitle1"
+        style="@style/TextInter700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/str_detail_confirmation_family"
+        android:textColor="@color/darkerGray5"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/personal_info_confirmation_desc" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/family_contact"
+        android:textColor="@color/grayDark3" />
+
+    <TextView
+        android:id="@+id/familyInfoConfirmationTxtContactName"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        tools:text="Jhony" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/full_name"
+        android:textColor="@color/grayDark3" />
+
+    <TextView
+        android:id="@+id/familyInfoConfirmationTxtFullName"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        tools:text="11/01/1991" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textColor="@color/grayDark3" />
+
+
+    <TextView
+        android:id="@+id/familyInfoConfirmationTxtGender"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        tools:text="Laki-laki" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birth_date"
+        android:textColor="@color/grayDark3" />
+
+    <TextView
+        android:id="@+id/familyInfoConfirmationTxtBirthDate"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        tools:text="11/01/1991" />
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_birth_place"
+        android:textColor="@color/grayDark3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/familyInfoConfirmationTxtBirthCounty"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            tools:text="Indonesia," />
+
+        <TextView
+            android:id="@+id/familyInfoConfirmationTxtBirthPlace"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            tools:text="Jakarta" />
+
+    </LinearLayout>
+
+
+    <TextView
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_citizenship"
+        android:textColor="@color/grayDark3" />
+
+    <TextView
+        android:id="@+id/familylInfoConfirmationTxtCitizenShip"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        tools:text="Indonesia" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/familyInfoConfirmationBtnNext"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/next" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/familyInfoConfirmationBtnEdit"
+        style="@style/DefaultButtonWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/str_change" />
+</LinearLayout>

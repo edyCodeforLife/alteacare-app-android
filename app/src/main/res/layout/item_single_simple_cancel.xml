@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_22sdp"
+    android:paddingEnd="@dimen/_18sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RadioButton
+        android:id="@+id/itemSampleRadioButton"
+        style="@style/TextInter400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:layoutDirection="rtl"
+        android:minHeight="@dimen/_40sdp"
+        android:textColor="@color/grayDark1"
+        android:buttonTint="@color/primary"
+        android:textAlignment="textStart"
+        tools:text="Ingin ubah jadwal" />
+
+
+</RelativeLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="id.altea.care">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".AlteaApps"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_altea_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_altea_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Alteaandroid"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="m">
+        <activity
+            android:name=".view.account.contact.ContactServicesActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".view.smsotp.SmsOtpActivity"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".view.splashscreen.SplashActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/deep_link_label">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/deep_link_schema" />
+
+                <!-- Accepts URIs that begin with "alteacare://appointment" -->
+                <data android:host="@string/deep_link_host_appointment" />
+                <data android:host="@string/deep_link_doctor"/>
+                <data android:host="@string/deep_link_specialization"/>
+                <data android:host="@string/deep_link_host_teleconsultation"/>
+                <data android:host="@string/deep_link_registration"/>
+                <data android:host="@string/deep_link_account"/>
+                <data android:host="@string/deep_link_covid_vaccine"/>
+                <data android:host="@string/deep_link_promotion"/>
+                <data android:host="@string/deep_link_home_widgets"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".view.videocall.VideoCallActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter >
+                <action android:name="android.bluetooth.headset.action.AUDIO_STATE_CHANGED" />
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.consultation.ConsultationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.payment.paymentmethod.PaymentMethodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.endcall.EndCallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.register.personalinfo.RegisterPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.register.contactinfo.RegisterContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.password.PasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.register.termcondition.TermConditionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.otpmail.EmailOtpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.otpmail.changemail.ChangeEmailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.forgotpassword.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.contact.ContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.main.MainActivity"
+            android:forceDarkAllowed="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.specialistsearch.SpecialistSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.notification.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.doctordetail.DoctorDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.common.ui.searchselectable.SearchSelectableActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.transition.TransitionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.consultationdetail.ConsultationDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.generalsearch.GeneralSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.consultationdetail.canceled.ConsultationCancelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.account.changeprofile.ChangeProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.changepassword.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.account.setting.SettingAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.faq.FaqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.account.termandcondition.TermConditionAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".view.login.LoginGuestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.register.transition.SuccessRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.payment.paymentinformation.PaymentInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.payment.paymentsuccess.PaymentSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.endcall.specialist.EndCallSpecialistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.transition.specialist.TransitionSpecialistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.changephonenumber.ChangePhoneNumberActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.changephonenumber.otpphone.PhoneOtpActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.mabusy.MaBusyActivity"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="io.sentry.dsn"
+            android:value="https://6b02d9d647b74118b4703c93120bf6bc@o951209.ingest.sentry.io/5900697" /> <!-- anr (aplication not responding) sentry -->
+        <meta-data
+            android:name="io.sentry.anr.enable"
+            android:value="false" />
+        <meta-data
+            android:name="io.sentry.anr.timeout-interval-mills"
+            android:value="2000" />
+
+        <service
+            android:name=".view.videocall.sharescreen.ScreenCaptureService"
+            android:enabled="true"
+            android:foregroundServiceType="mediaProjection" />
+
+        <service android:name="com.moengage.firebase.MoEFireBaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".view.viewdocument.ViewDocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.webview.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.family.formfamily.FormFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.address.addresslist.AddressListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.address.addressform.AddressFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.family.listfamily.ListFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.family.detailfamily.DetailFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.consultation.voucher.VoucherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.forceupdate.ForceUpdateActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".view.generalsearch.SymptomListActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.generalsearch.SpecialistCategoryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.cancelstatusorder.CancelStatusActvity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.reconsultation.ReconsultationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.viewdocument.ViewDocumentDownloadActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.onboarding.OnboardingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.onboarding.OnboardingStartNowActivty"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.onboarding.OnboardingWelcomeActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".view.promotion.group.PromotionGroupActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.promotion.teleconsultation.PromotionTeleconsultationActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.promotion.detail.PromotionDetailActivity"
+            android:screenOrientation="portrait"
+            />
+
+    </application>
+
+</manifest>

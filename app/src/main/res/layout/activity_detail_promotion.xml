@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar_default_center"
+        app:layout_constraintBottom_toTopOf="@+id/promotionDetailScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/promotionDetailScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:fillViewport="false"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/promotionDetailBtnMoreView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/promotionDetailImgPromotion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_background_promotion"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="contentDescription" />
+
+            <TextView
+                android:id="@+id/detailPromotionTitle"
+                style="@style/TextInter700"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingStart="@dimen/_6sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/promotionDetailImgPromotion"
+                tools:text="Judul Promo Lorem Ipsum Dolor Sit Amet" />
+
+
+            <WebView
+                android:id="@+id/detailPromotionDescriptionText"
+                style="@style/TextInter400"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toTopOf="@+id/promotionDetailCodeText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailPromotionTitle"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel justo ex. Praesent pellentesque, neque vitae pellentesque rhoncus, ligula est bibendum ex, sit amet feugiat dolor tortor sed augue. Nulla facilisi. Pellentesque pellentesque feugiat pharetra. Suspendisse rutrum dolor ac varius gravida. Curabitur fringilla volutpat eros ac venenatis. Integer eget congue est. Proin sit amet eleifend diam, et placerat orci. Integer eget velit ullamcorper, scelerisque sem non, volutpat eros. Integer fringilla pellentesque egestas. Nunc porta nibh luctus odio volutpat, quis vestibulum eros hendrerit. Vestibulum feugiat blandit consectetur. Mauris rhoncus massa nibh, nec placerat mi finibus vitae. Suspendisse vulputate porta mauris. Etiam aliquam felis placerat ligula convallis, eget finibus velit tempus. Curabitur pretium ultricies viverra. "
+                tools:ignore="WebViewLayout" />
+
+
+            <TextView
+                android:id="@+id/promotionDetailCodeText"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/str_voucher_code"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/promotionDetaillinearLayout"
+                app:layout_constraintStart_toStartOf="@+id/promotionDetaillinearLayout" />
+
+
+            <LinearLayout
+                android:id="@+id/promotionDetaillinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_49sdp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/grayLight4"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/promotionDetailTextCodeVoucher"
+                    style="@style/TextInter500"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_weight="1"
+                    tools:text="ALTEA 10" />
+
+                <TextView
+                    android:id="@+id/promotionDetailTextCopy"
+                    style="@style/TextInter500"
+                    android:layout_width="0dp"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/str_copy"
+                    android:textColor="@color/primary" />
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/promotionDetailBtnMoreView"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/str_btn_more_info"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <include
+        android:id="@+id/promotionDetailContentError"
+        layout="@layout/content_error_retry"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/promotionDetailPLoading"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading_lottie.json"
+        app:lottie_loop="true"
+        app:lottie_repeatMode="restart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

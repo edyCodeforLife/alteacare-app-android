@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onConsultationCostSwipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/consultationCostText"
+                style="@style/TextInter600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/grayLight2"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="@string/consultation"
+                android:textColor="@color/blueDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcyrlConsultationCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consultationCostText" />
+
+            <TextView
+                android:id="@+id/consultationCostText3"
+                style="@style/TextInter600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_17sdp"
+                android:text="@string/total_price"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toStartOf="@+id/consultationCostTxtTotalPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/rcyrlConsultationCost"
+                app:layout_constraintTop_toBottomOf="@id/rcyrlConsultationCost" />
+
+            <TextView
+                android:id="@+id/consultationCostTxtTotalPrice"
+                style="@style/TextInter600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@id/consultationCostText3"
+                app:layout_constraintEnd_toEndOf="@id/rcyrlConsultationCost"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/consultationCostText3"
+                app:layout_constraintTop_toTopOf="@id/consultationCostText3"
+                tools:text="Rp. 215.000" />
+
+            <TextView
+                android:id="@+id/textView17"
+                style="@style/TextInter600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:background="@color/grayLight2"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="@string/payment_method"
+                android:textColor="@color/blueDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consultationCostText3" />
+
+
+            <TextView
+                android:id="@+id/consultationCostTxtPaymentMethod"
+                style="@style/TextInter600"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17"
+                tools:drawableLeft="@drawable/ic_bca"
+                tools:text="Kartu Kredit" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/subtle"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/text"
+                    style="@style/TextInter700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:text="@string/grand_total"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/consultationCostTxtGrandPrice"
+                    style="@style/TextInter700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_13sdp"
+                    android:layout_toEndOf="@id/text"
+                    android:gravity="end"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_15ssp"
+                    tools:text="Rp. 415.000" />
+
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/costConsultationContentEmpty"
+                layout="@layout/content_empty_price_consultation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/download_receipt_button"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/download_receipt"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/costConsultationProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

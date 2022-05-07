@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/endCallTextFinish"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/str_consultation_end"
+        android:textColor="@color/grayDark2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/endCallSpecialistTextTimer"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/blueDark"
+        app:layout_constraintEnd_toEndOf="@+id/endCallTextFinish"
+        app:layout_constraintStart_toStartOf="@+id/endCallTextFinish"
+        app:layout_constraintTop_toBottomOf="@+id/endCallTextFinish"
+        tools:text="00:00:03" />
+
+    <ImageView
+        android:id="@+id/imageEndCallDoctorSpecialist"
+        android:layout_width="@dimen/_191sdp"
+        android:layout_height="@dimen/_191sdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_end_call"
+        app:layout_constraintBottom_toTopOf="@id/endCallConsultationTxtMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endCallSpecialistTextTimer"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/endCallConsultationTxtMessage"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:text="@string/str_consultation_medis"
+        android:textColor="@color/blueDark"
+        app:layout_constraintBottom_toTopOf="@+id/endCallBtnPayment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEndCallDoctorSpecialist"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/endCallBtnPayment"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="92dp"
+        android:text="@string/watch_memo_altea"
+        app:layout_constraintBottom_toTopOf="@+id/textOrderInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endCallConsultationTxtMessage" />
+
+    <TextView
+        android:id="@+id/textOrderInfo"
+        style="@style/TextInter700"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/str_order_medicine"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="@+id/endCallBtnPayment"
+        app:layout_constraintStart_toStartOf="@+id/endCallBtnPayment"
+        app:layout_constraintTop_toBottomOf="@+id/endCallBtnPayment" />
+
+    <TextView
+        android:id="@+id/textInfo"
+        style="@style/TextInter400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:text="@string/str_info"
+        android:textColor="@color/grayDark2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

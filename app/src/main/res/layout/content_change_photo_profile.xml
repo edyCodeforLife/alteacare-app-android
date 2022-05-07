@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_75sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_8sdp"
+    android:paddingStart="@dimen/_18sdp"
+    android:background="@android:color/white"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/accountImgChangeProfile"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginBottom="@dimen/_13sdp"
+        android:src="@drawable/ic_change_photo_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/_19sdp"
+        android:layout_height="@dimen/_19sdp"
+        android:src="@drawable/ic_camera_change_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/accountImgChangeProfile"
+        app:layout_constraintEnd_toEndOf="@+id/accountImgChangeProfile" />
+
+    <TextView
+        android:id="@+id/accountTxtProfileName"
+        style="@style/TextInter400"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:textColor="@color/grayDark3"
+        app:layout_constraintBottom_toBottomOf="@+id/accountImgChangeProfile"
+        app:layout_constraintStart_toEndOf="@+id/accountImgChangeProfile"
+        app:layout_constraintTop_toTopOf="@+id/accountImgChangeProfile"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:text="@string/str_change_photo_profile" />
+
+    <ProgressBar
+        android:id="@+id/accountProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/accountImgChangeProfile"
+        app:layout_constraintEnd_toEndOf="@+id/accountImgChangeProfile"
+        app:layout_constraintStart_toStartOf="@+id/accountImgChangeProfile"
+        app:layout_constraintTop_toTopOf="@+id/accountImgChangeProfile"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

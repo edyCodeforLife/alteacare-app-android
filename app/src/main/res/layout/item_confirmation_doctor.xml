@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/confirmationImgDoctor"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_altea_launcher" />
+
+        <ImageView
+            android:id="@+id/confirmationImgRs"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@+id/confirmationImgDoctor"
+            app:layout_constraintTop_toTopOf="@+id/confirmationImgDoctor"
+            tools:src="@drawable/ic_altea_launcher" />
+
+        <TextView
+            android:id="@+id/confirmationTxtHospital"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="7dp"
+            android:textColor="@color/grayDark2"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toTopOf="@+id/confirmationTxtNameDoctor"
+            app:layout_constraintStart_toEndOf="@+id/confirmationImgRs"
+            app:layout_constraintTop_toTopOf="@+id/confirmationImgRs"
+            app:layout_constraintVertical_bias="0.92"
+            tools:text="RS. MIKA Kelapa Gading" />
+
+
+        <TextView
+            android:id="@+id/confirmationTxtChange"
+            style="@style/TextInter600"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="18dp"
+            android:gravity="center"
+            android:text="@string/ubah_constultation"
+            android:textColor="@color/primary"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/confirmationTxtHospital"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toEndOf="@+id/confirmationTxtHospital"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01999998" />
+
+        <TextView
+            android:id="@+id/confirmationTxtNameDoctor"
+            style="@style/TextInter600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/grayDark1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/confirmationImgDoctor"
+            app:layout_constraintTop_toBottomOf="@+id/confirmationImgRs"
+            tools:text="dr. Cindy Simangunsong" />
+
+        <TextView
+            android:id="@+id/confirmationTxtSpesialis"
+            style="@style/TextInter500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/grayDark1"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/confirmationImgDoctor"
+            app:layout_constraintStart_toEndOf="@+id/confirmationImgDoctor"
+            app:layout_constraintTop_toBottomOf="@+id/confirmationTxtNameDoctor"
+            tools:text="Sp. Anak - Endokrinologi" />
+
+        <TextView
+            android:id="@+id/confirmationTxtCalendar"
+            style="@style/TextInter400"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/grayDark3"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:layout_constraintEnd_toStartOf="@+id/confirmationTxtTime"
+            app:layout_constraintRight_toLeftOf="@+id/confirmationTxtTime"
+            app:layout_constraintStart_toStartOf="@+id/confirmationImgDoctor"
+            app:layout_constraintTop_toBottomOf="@+id/confirmationTxtSpesialis"
+            tools:text="Selasa, 28 Des 2020" />
+
+        <TextView
+            android:id="@+id/confirmationTxtTime"
+            style="@style/TextInter400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_8sdp"
+            android:textColor="@color/grayDark3"
+            app:drawableStartCompat="@drawable/ic_clock"
+            app:layout_constraintBottom_toBottomOf="@+id/confirmationTxtCalendar"
+            app:layout_constraintEnd_toEndOf="@+id/confirmationTxtChange"
+            app:layout_constraintTop_toTopOf="@+id/confirmationTxtCalendar"
+            tools:text="09.45 - 10.00" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/confirmationTxtCalendar"
+            app:layout_constraintTop_toBottomOf="@+id/confirmationTxtCalendar">
+
+            <TextView
+                android:id="@+id/txtStatusAppoiment"
+                style="@style/TextInter400"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:textColor="@color/grayDark3"
+                app:drawableStartCompat="@drawable/ic_video_rd"
+                tools:text="Panggilan Video" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

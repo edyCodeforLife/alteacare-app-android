@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackgroundBorderless"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:id="@+id/linInOperationalHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtInOperationalHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:layout_marginBottom="-10dp"
+            android:paddingBottom="16dp"
+            style="@style/TextInter400"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:text="@string/connect_to_ma"
+            android:background="@color/grayDark2"
+            android:gravity="center"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/itemScheduleTxtOrderId"
+                    style="@style/TextInter400"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/cardView"
+                    app:layout_constraintEnd_toStartOf="@+id/cardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cardView"
+                    tools:text="Order id: 5009932" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/itemScheduleTxtStatus"
+                        style="@style/TextInter500"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_6sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_6sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="@string/meet_doctor"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        tools:background="@color/primary" />
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/grayLight2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+                <include
+                    android:id="@+id/contentDoctor"
+                    layout="@layout/content_doctor_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@id/cardView"
+                    app:layout_constraintStart_toStartOf="@id/itemScheduleTxtOrderId"
+                    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@color/grayLight2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contentDoctor"
+                    app:layout_goneMarginTop="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/itemScheduleTxtDate"
+                    style="@style/TextInter600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_10ssp"
+                    app:drawableStartCompat="@drawable/ic_date_blue"
+                    app:layout_constraintEnd_toStartOf="@+id/itemScheduleTxtTime"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/itemScheduleTxtOrderId"
+                    app:layout_constraintTop_toBottomOf="@id/divider2"
+                    tools:text="Selasa, 11 Des 2020" />
+
+                <TextView
+                    android:id="@+id/itemScheduleTxtTime"
+                    style="@style/TextInter600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_10ssp"
+                    app:drawableStartCompat="@drawable/ic_clock_blue"
+                    app:layout_constraintBottom_toBottomOf="@+id/itemScheduleTxtDate"
+                    app:layout_constraintEnd_toEndOf="@id/cardView"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/itemScheduleTxtDate"
+                    app:layout_constraintTop_toBottomOf="@id/divider2"
+                    tools:text="09.00 - 11.00" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

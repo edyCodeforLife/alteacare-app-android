@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/parentVideoCallView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/crdLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <id.altea.care.core.helper.util.MovableFloatingActionButton
+            android:id="@+id/floatingMessageVideoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_message_floating"
+            app:shapeAppearance="@style/floating_rectangle"
+            android:layout_gravity="bottom|right"
+            android:visibility="invisible"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            />
+
+
+        <id.altea.care.core.helper.util.AdvancedWebView
+            android:id="@+id/videoCallWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true" />
+
+
+        <include
+            android:id="@+id/videoCallReconnectingWebView"
+            layout="@layout/content_reconnecting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/actionBarVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="@color/grayDark1"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp">
+
+            <ImageButton
+                android:id="@+id/videoCallBtnInfoWebView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_btn_info"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallTvTimerWebView"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <Chronometer
+                android:id="@+id/videoCallTvTimerWebView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/videoCallBtnSpeaker"
+                app:layout_constraintStart_toEndOf="@+id/videoCallBtnInfoWebView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12:23:01" />
+
+            <ImageButton
+                android:id="@+id/videoCallBtnSpeaker"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_volume_on"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/videoCallTvTimerWebView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/videoCallEnd"
+                style="@style/MainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="@string/str_end_call"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/videoFragmentWebViewRefresh"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:src="@drawable/ic_refresh_connection"
+            android:layout_gravity="left|top"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_49sdp"
+            />
+
+        <include
+            android:id="@+id/videoCallTrackConnectionWebView"
+            layout="@layout/item_tracking_connection"
+            android:layout_marginTop="@dimen/_47sdp"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+
+        <include
+            android:id="@+id/videoCallDisplayDisconnect"
+            layout="@layout/content_disconnect"
+            android:visibility="gone"
+            />
+
+
+
+    </FrameLayout>
+
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/crdLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity">
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

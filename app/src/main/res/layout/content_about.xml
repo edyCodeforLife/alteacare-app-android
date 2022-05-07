@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/accountBtnFaq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_question"
+        android:text="@string/str_question"
+        android:gravity="start|center"
+        android:textColor="@color/blueDark"
+        style="@style/AccountButton"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/accountBtnContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_call_about"
+        android:text="@string/str_altea_care"
+        android:gravity="start|center"
+        android:textColor="@color/blueDark"
+        style="@style/AccountButton"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:layout_marginBottom="1dp"
+        />
+
+
+    <Button
+        android:id="@+id/accountBtnTermAndCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_term_condition"
+        android:text="@string/str_term_and_condition"
+        android:gravity="start|center"
+        android:textColor="@color/blueDark"
+        style="@style/AccountButton"
+        android:drawableRight="@drawable/ic_arrow_right"
+        />
+
+</LinearLayout>

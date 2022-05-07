@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="0dp"
+    android:paddingTop="@dimen/_6sdp"
+    android:paddingEnd="@dimen/_4sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <CheckBox
+        android:id="@+id/itemFilterRbPatient"
+        style="@style/TextInter600"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/radio_round_6dp_blue_selector"
+        android:button="@android:color/transparent"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/_12sdp"
+        android:textColor="@color/selector_darker_white"
+        android:textSize="@dimen/_11ssp"
+        tools:text="Pribadi - Adi rosiadi" />
+
+</FrameLayout>

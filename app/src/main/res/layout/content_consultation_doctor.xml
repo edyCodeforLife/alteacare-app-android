@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/consultationImgDoctor"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_altea_launcher" />
+
+    <ImageView
+        android:id="@+id/consultationImgRs"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/consultationImgDoctor"
+        app:layout_constraintTop_toTopOf="@+id/consultationImgDoctor"
+        tools:src="@drawable/ic_altea_launcher" />
+
+    <TextView
+        android:id="@+id/consultationTxtHospital"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="7dp"
+        android:textColor="@color/grayDark2"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toTopOf="@+id/consultationTxtNameDoctor"
+        app:layout_constraintStart_toEndOf="@+id/consultationImgRs"
+        app:layout_constraintTop_toTopOf="@+id/consultationImgRs"
+        app:layout_constraintVertical_bias="0.92"
+        tools:text="RS. MIKA Kelapa Gading" />
+
+    <TextView
+        android:id="@+id/consultationTxtNameDoctor"
+        style="@style/TextInter600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/grayDark1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/consultationImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/consultationImgRs"
+        tools:text="dr. Cindy Simangunsong" />
+
+    <TextView
+        android:id="@+id/consultationTxtSpesialis"
+        style="@style/TextInter500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/grayDark1"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/consultationImgDoctor"
+        app:layout_constraintStart_toEndOf="@+id/consultationImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/consultationTxtNameDoctor"
+        tools:text="Sp. Anak - Endokrinologi" />
+
+
+    <TextView
+        android:id="@+id/consultationTxtCalendar"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="14dp"
+        android:drawablePadding="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:drawableStartCompat="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/consultationTxtTime"
+        app:layout_constraintStart_toStartOf="@+id/consultationImgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/consultationTxtSpesialis"
+        tools:text="Selasa, 28 Des 2020" />
+
+
+    <TextView
+        android:id="@+id/consultationTxtTime"
+        style="@style/TextInter400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_8sdp"
+        android:textColor="@color/grayDark3"
+        app:drawableStartCompat="@drawable/ic_clock"
+        app:layout_constraintBottom_toBottomOf="@+id/consultationTxtCalendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/consultationTxtCalendar"
+        app:layout_constraintTop_toTopOf="@+id/consultationTxtCalendar"
+        tools:text="09.45 - 10.00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
